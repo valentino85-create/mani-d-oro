@@ -1,0 +1,1165 @@
+/* FONT PERSONALIZZATO */
+@font-face {
+    font-family: "Allura-Regular";
+    src: url("fonts/Allura-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ArbutusSlab-Regular";
+    src: url("fonts/ArbutusSlab-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+/* STILE DI BASE */
+body {
+    margin: 0;
+    font-family: "Allura-Regular", cursive;
+    background-color: white;
+}
+
+/* Evita lo scroll orizzontale */
+html,
+body {
+    overflow-x: hidden;     
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+main {
+    padding-top: 10px;
+}
+
+main h1,
+main p {
+    padding-top: 1px;
+    margin: 30px;
+    text-align: center;
+}
+
+/* STILE GENERALE PER h1, h2 e p */
+h1 {
+    font-family: "Allura-Regular", cursive;
+    font-size: 2.5rem;      /* 40px */
+    margin: 2rem;
+}
+
+h2 {
+    font-family: "ArbutusSlab-Regular", serif;
+    font-size: 2rem;        
+    margin: 2rem;
+}
+
+p {
+    font-family: "ArbutusSlab-Regular", serif;
+    font-size: 1rem;       
+    line-height: 1.5;      
+}
+
+a {
+    color: black;
+    font-size: 22px;
+}
+
+/* Media queries per la responsività */
+@media (max-height:768px) {
+    h1 {
+        font-size: 2rem;        
+    }
+
+    h2 {
+        font-size: 1.5rem;      
+    }
+
+    p {
+        font-size: 0.9rem;      
+    }
+}
+
+@media (max-height:480px) {
+    h1 {
+        font-size: 1.5rem;      
+    }
+
+    h2 {
+        font-size: 1.25rem;     
+    }
+
+    p {
+        font-size: 0.8rem;      
+    }
+}
+
+/* STILE PER HEADER (Header che contiene logo e menu) */
+.header {
+    background-color: white;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    min-height: 120px;
+}
+
+/* STILE PER LOGO */
+.logo {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: auto;  
+    max-height: 100px;
+    display: block;
+}
+
+/* Navigation container */
+.nav-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+/* Menu base (mobile chiuso) */
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #FFA3D7;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Link del menu */
+.menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+    background-color: #FFA3D7;
+    width: 100%;
+    border: none;
+}
+
+.menu a:hover {
+    background-color: #ff7fc2;
+}
+
+/* Icona hamburger */
+.menu-icon {
+    padding: 20px;
+    cursor: pointer;
+    display: block;
+}
+
+.nav-icon {
+   background-color: black;
+   height: 2px;
+   width: 20px;
+   position: relative;
+   display: block;
+}
+
+.nav-icon::before,
+.nav-icon::after {
+    background-color: black;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 20px;
+    left: 0;
+    position: absolute;
+}
+
+.nav-icon::before {
+    top: 5px;
+}
+
+.nav-icon::after {
+    top: -5px;
+}
+
+/* Toggle menu */
+.menu-btn {
+    display: none;
+}
+
+.menu-btn:checked~.menu {
+    max-height: 500px;      
+}
+
+.menu-btn:checked~.menu-icon .nav-icon {
+    background-color: transparent;
+}
+
+.menu-btn:checked~.menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.menu-btn:checked~.menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* Media query Layout desktop */
+@media (min-width: 768px) {
+    .menu {
+        flex-direction: row;        
+        display: flex;
+        max-height: none;
+        background-color: #FFA3D7;
+        width: auto;
+    }
+    
+    .menu li {
+        padding: 0;
+        margin: 0;      
+    }
+
+    .menu a {
+        padding: 20px 30px;     
+    }
+
+    .menu li:first-child a {
+        border-left: none;
+    }
+
+    .menu-icon {
+        display: none;      
+    }
+}
+
+/* Media query Responsive per mobile */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;     
+        width: 100%;
+    }
+
+    .menu a {
+        padding: 15px;
+        text-align: justify;
+        width: 100%;        
+    }
+
+    .logo img {
+         max-height: 80px;       
+    }
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+/* Stile per il container principale */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Colonna sinistra: contatti, icone social e mappa */
+.left-column {
+    flex: 1;       
+    display: flex;
+    flex-direction: column;     
+    align-items: center;
+    text-align: center;
+}
+
+/* STILE SEZIONE CONTATTI */
+.contatti {
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Stile indirizzo */
+address {
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Link */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Orari */
+.orari {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 400px;
+}
+
+.orari ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.orari li {
+    margin-bottom: 4px;
+}
+
+/* Media query come contattarmi */
+@media (max-width:768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .contatti,
+    .contact-form {
+        padding: 0;
+        border: none;
+    }
+
+    .orari {
+        font-size: 16px;
+    }
+}
+
+/* Stile delle icone social */
+.contact-social-icons {
+    display: flex;
+    justify-content: center;        
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.contact-social-icon {
+    font-size: 24px;        
+    color: #333;     
+    transition: color 0.3s;
+}
+
+.contact-social-icon:hover {
+    color: #ff8fce;     
+}
+
+/* Stile mappa */
+.map-container {
+    width: 400px;
+    height: 250px;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;        
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);       
+    margin: 20px 0;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;      
+}
+
+/* Colonna destra */
+.right-column {
+    flex: 1;
+    max-width: 500px;       
+}
+
+/* Form di contatto */
+.contact-form {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Formattazione generica per il form */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Bottoni form */
+.button-container {
+    display: flex;
+    justify-content: space-between;     
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Media queries per schermi piccoli */
+@media (max-width:768px) {
+    .container {
+        flex-direction: column;
+        gap: 30px;      
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .map-container {
+        max-width: 100%;
+        height: 200px;
+    }
+}
+
+/* STILE IMMAGINI GALLERIA */
+.galleria {
+    max-width: 900px;       
+    margin: 0 auto;     
+    padding: 20px;
+    background: #f9f9f9;        
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);       
+}
+
+/* Titolo principale */
+.galleria h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Sottotitolo */
+.galleria h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.gallery-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gallery-buttons button {
+    font-family: "ArbutusSlab-Regular", serif;
+    background-color: #ff8fce;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.gallery-buttons button:hover {
+    background-color: #FFA3D7;
+}
+
+.gallery-buttons button:focus-visible {
+    outline: 2px solid #ff8fce;
+    box-shadow: 0 0 10px rgba(255, 143, 206, 0.5);
+}
+
+/* Descrizione categoria */
+.category-desc {
+    text-align: center;
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease;
+}
+
+/* Nascondi inizialmente tutti gli elementi */
+.hidden {
+    display: none !important;
+}
+
+.img {
+    display: block;
+    min-height: 300px;      
+}
+
+.gallery-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.gallery-flex figure {
+    flex: 1 1 calc(33.333% - 40px);     
+    max-width: 300px;       
+    text-align: center;     
+}
+
+.gallery-img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;      
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item {
+    flex: 1 1 calc(33.333% - 30px);
+    max-width: 300px;
+    min-height: 300px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;      
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+}
+
+.lightbox p {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Stile per ogni figura */
+figure {
+    margin: 0;
+    text-align: center
+}
+
+figure img:hover {
+    transform: scale(1.05);     
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Stile per la didascalia delle immagini */
+figcaption {
+    margin-top: 5px;
+    font-size: 2rem;
+    color: #555;
+}
+
+/* Media queries per la responsività della galleria */
+@media (max-width: 768px) {
+
+    .gallery-flex figure,
+    .gallery-item {
+        flex: 1 1 calc(50% - 20px);     
+    }
+}
+
+@media (max-width: 480px) {
+    .galleria {
+        padding: 20px 10px;
+    }
+
+    .gallery-flex figure,
+    .gallery-item {
+        flex: 1 1 100%;     
+    }
+}
+
+/* Box sizing universale per evitare problemi con le dimensioni degli elementi */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* STILE PER SEZIONE SERVIZI */
+.servizi {
+    max-width: 900px;       
+    margin: 0 auto;     
+    padding: 20px;
+    background: #f9f9f9;        
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);       
+}
+
+/* Titolo principale */
+.servizi h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Sottotitolo */
+.servizi h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Testo */
+.servizi p {
+    font-size: 1.1rem;
+    line-height: 1.6;       
+    color: #444;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Lista servizi */
+.servizi ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;        
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Singolo servizio */
+.servizi li {
+    font-family: "ArbutusSlab-Regular", serif;
+    flex: 1 1 calc(50% - 15px);     
+    max-width: 400px;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Icona accanto ai servizi */
+.servizi li::before {
+    content: "✔";      
+    color: #FFA3D7;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+/* Spaziatura tra i blocchi di servizio */
+.blocco-servizio {
+    margin-bottom: 2.5rem;
+}
+
+/* Stile per la call to action finale */
+.cta-servizi {
+    text-align: center;
+    background-color: #fff0f6;
+    padding: 30px 20px;
+    margin-top: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Bottone "Contattami ora" */
+.btn-contatta {
+    font-family: "ArbutusSlab-Regular", serif;
+    display: center;
+    background-color: #FFA3D7;
+    color: white;
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-contatta:hover {
+    background-color: #ff87c4;
+}
+
+/* Responsività */
+@media (max-width:768px) {
+    .servizi {
+        padding: 15px;
+    }
+
+    .servizi h1 {
+        font-size: 1.8rem;
+    }
+
+    .servizi h2 {
+        font-size: 1.3rem;
+    }
+
+    .servizi p {
+        font-size: 1rem;
+    }
+
+    .servizi ul {
+        flex-direction: column;     
+    }
+
+    .servizi li {
+        flex: 1 1 100%;
+        padding: 15px;
+    }
+
+     /* Call to action più grande sui dispositivi mobili */
+     .cta-servizi {
+        padding: 25px 15px;
+    }
+
+    .btn-contatta {
+        padding: 1rem 2rem;
+        font-size: 1.2rem; /* Font più grande su mobile */
+    }
+}
+
+/* STILE PER SEZIONE CHI SIAMO */
+.chi-siamo {
+    max-width: 900px;       
+    margin: 0 auto;     
+    padding: 20px;
+    background: #f9f9f9;        
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);       
+}
+
+.chi-siamo-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* Immagine */
+.chi-siamo-img {
+    width: 130px;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    margin-left: 30px;
+}
+
+.chi-siamo-titoli {
+    flex: 1;
+}
+
+.chi-siamo-titoli h1 {
+    margin-left: -40px;
+}
+
+/* Titolo principale */
+.chi-siamo h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Testo */
+.chi-siamo p {
+    font-size: 1.1rem;
+    line-height: 1.6;       
+    color: #444;        
+}
+
+/* Media query per schermi piccoli */
+@media (max-width:768px) {
+    .chi-siamo-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .chi-siamo-img {
+        width: 50%;
+    }
+
+    .chi-siamo h1 {
+        font-size: 1.8rem;
+    }
+
+    .chi-siamo h2 {
+        font-size: 1.3rem;
+    }
+
+    .chi-siamo p {
+        font-size: 1rem;
+        text-align: left;       
+    }
+}
+
+/* Imposta il box-sizing per tutti gli elementi */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Stile generale del footer */
+.footer {
+    background-color: #71143E;
+    color: white;
+    padding: 20px;
+    font-family: "ArbutusSlab-Regular", serif;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Layout interno */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+    background-color: inherit;
+    padding: 0;
+}
+
+.footer-container p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Stile delle sezioni del footer */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Stile lista link */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 6px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #007bff;
+}
+
+/* Stile icone social */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: white;
+    transition: color 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #007bff;
+}
+
+/* Sezione inferiore */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    color: #bbb;
+}
+
+.footer-bottom a {
+    white-space: nowrap;
+}
+
+/* Sezione orari di apertura */
+.footer-opening-hours {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-opening-hours li {
+    margin-bottom: 4px;
+}
+
+/* Responsive footer */
+@media (max-width:768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .social-icon {
+        font-size: 20px;
+    }
+}
+
+/* Stile cookie footer */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;        
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;        
+    gap: 10px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    transition: opacity 0.3s ease;
+}
+
+.cookie-banner.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Stile per il link della cookie policy */
+.cookie-banner a {
+    color: #fc0;
+    text-decoration: underline;
+    max-width: 100%;
+    min-height: 60px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    flex-shrink: 1;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Stile per il pulsante */
+.cookie-banner button {
+    background-color: #fc0;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    max-width: 100%;
+    word-wrap: break-word;
+    flex-shrink: 1;
+}
+
+.cookie-banner button:hover {
+    background-color: #e6b800;
+}
+
+#decline-cookies {
+    background-color: #888;
+    color: white;
+}
+
+#decline-cookie:hover {
+    background-color: #666;
+}
+
+/* Media query per schermi piccoli */
+@media (max-width:600px) {
+    .cookie-banner {
+        flex-direction: column;     
+        text-align: center;
+        padding: 10px;
+    }
+
+    .cookie-banner button {
+        width: 80%;
+        max-width: 200px;
+    }
+}
+
+/* STILE PER LA HOME */
+.benvenuto-img-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+
+.benvenuto-img-container img {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.benvenuto-img-container img:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.centered-h2 {
+    text-align: center;
+}
+
+.clickable-img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+}
+
+/* Stile per il modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Responsive ottimale per schermi piccoli */
+@media (max-width: 768px) {
+    .benvenuto-img-container img {
+        max-width: 90%;
+    }
+}

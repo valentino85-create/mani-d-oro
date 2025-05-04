@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galleria</title>
+    
+    <!-- Preconnect ai servizi esterni (Google Fonts e Fontello) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload fonts for faster loading -->
+    <link rel="preload" href="fonts/Allura-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ArbutusSlab-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fontello/font/fontello.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Google Fonts + Fontello -->
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Arbutus+Slab&display=swap" rel="stylesheet">
+
+    <!-- Caricamento non bloccante CSS principale -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    
+    <!-- Fontello icone -->
+    <link rel="stylesheet" href="fontello/css/fontello.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="fontello/css/fontello.css"></noscript>
+</head>
+
+<body>
+
+    <!-- Codice Header -->
+    <header class="header">
+        <!-- Logo nella sua sezione separata -->
+        <div class="logo">
+            <a href="index.html">
+                <picture>
+                    <source srcset="Logo_negozio/Logo-negozio-Ele.webp" type="image/webp">
+                    <img src="Logo_negozio/Logo-negozio-Ele.png" alt="Logo del sito" width="120" height="120" fetchpriority="high">
+                </picture>
+            </a>
+        </div>
+
+        <!-- Menu hamburger (in una sezione separata)-->
+        <nav class="nav-container">
+            <input class="menu-btn" id="menu-btn" type="checkbox">
+            <label for="menu-btn" class="menu-icon">
+                <span class="nav-icon"></span>
+            </label>
+
+            <!-- Menu di navigazione -->
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Chi sono</a></li>
+                <li><a href="services.html">Servizi</a></li>
+                <li><a href="gallery.html">Galleria</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Sezione Galleria -->
+        <section class="galleria">
+            <h1>Galleria</h1>
+            <div class="gallery-buttons">
+                <button onclick="filtraCategoria('merceria')">Merceria</button>
+                <button onclick="filtraCategoria('sartoria')">Sartoria</button>
+                <button onclick="filtraCategoria('tutti')">Mostra Tutto</button>
+            </div>
+
+            <h2 id="gallery-title"><strong>Foto attività</strong></h2>
+
+            <!-- Paragrafo unico -->
+            <p id="gallery-description" class="category-desc"></p>
+            <!-- testo inserito dinamicamente -->
+
+            <!-- Inserimento immagini MERCERIA-->
+            <div class="gallery-flex">
+                <figure class="gallery-item merceria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20240930-WA0009-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20240930-WA0009-300x352.webp" 
+                            alt="Filati per maglieria"
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20240930-WA0009.webp" 
+                            loading="lazy" 
+                            fetchpriority="high">
+                    </picture>
+                    <figcaption>Filati per maglieria</figcaption>
+                </figure>
+                <figure class="gallery-item merceria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20240930-WA0001-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20240930-WA0001-300x352.webp" 
+                            alt="Nastri" 
+                            width="300"
+                            height="352" 
+                            data-full="Foto_Galleria/IMG-20240930-WA0001.webp"
+                            loading="lazy"
+                            fetchpriority="high">
+                    </picture>
+                    <figcaption>Nastri</figcaption>
+                </figure>
+                <figure class="gallery-item merceria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20240930-WA0002-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20240930-WA0002-300x352.webp" 
+                            alt="Bottoni" 
+                            width="300"
+                            height="352" 
+                            data-full="Foto_Galleria/IMG-20240930-WA0002.webp"
+                            loading="lazy"
+                            fetchpriority="high">
+                    </picture>
+                    <figcaption>Bottoni</figcaption>
+                </figure>
+                <figure class="gallery-item merceria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20240930-WA0003-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20240930-WA0003-300x352.webp" 
+                            alt="Filati per ricamo"
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20240930-WA0003.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Filati per ricamo</figcaption>
+                </figure>
+                <figure class="gallery-item merceria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20240930-WA0004-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20240930-WA0004-300x352.webp" 
+                            alt="Passamaneria"
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20240930-WA0004.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Passamaneria</figcaption>
+                </figure>
+                <figure class="gallery-item merceria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20240930-WA0005-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20240930-WA0005-300x352.webp" 
+                            alt="Filati per cucito"
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20240930-WA0005.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Filati per cucito</figcaption>
+                </figure>
+            </div>
+
+            <!-- Inserimento immagini SARTORIA-->
+            <div class="gallery-flex">
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0013-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20250206-WA0013-300x352.webp"
+                            alt="Cartamodelli su misura" 
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20250206-WA0013.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Cartamodelli su misura</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0018-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20250206-WA0018-300x352.webp" 
+                            alt="Abito da cerimonia"
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20250206-WA0018.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Abito da cerimonia</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0014-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20250206-WA0014-300x352.webp" 
+                            alt="Abito da cerimonia"
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20250206-WA0014.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Abito da cerimonia</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0037-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20250206-WA0037-300x352.webp" 
+                            alt="Abito da cerimonia"
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20250206-WA0037.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Abito da cerimonia</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250430-WA0002-300x352.webp" type="image/webp">
+                        <img class="gallery-img"
+                            src="Foto_Galleria/IMG-20250430-WA0002-300x352.webp"
+                            alt="Abito da sposa"
+                            width="300"
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20250430-WA0002.webp"
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Abito da sposa</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0015-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20250206-WA0015-300x352.webp" 
+                            alt="Abito da sposa"
+                            width="300"
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20250206-WA0015.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Abito da sposa</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0016-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20250206-WA0016-300x352.webp" 
+                            alt="Abito da sposa"
+                            width="300"
+                            height="352" 
+                            data-full="Foto_Galleria/IMG-20250206-WA0016.webp"
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Abito da sposa</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0023-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20250206-WA0023-300x352.webp"
+                            alt="Design unico e personalizzato" 
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20250206-WA0023.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Design unico e personalizzato</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0022-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20250206-WA0022-300x352.webp"
+                            alt="Immagine senza didascalia" 
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20250206-WA0022.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Immagine senza didascalia</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0021-300x352.webp" type="image/webp">
+                        <img class="gallery-img"
+                            src="Foto_Galleria/IMG-20250206-WA0021-300x352.webp"
+                            alt="Immagine senza didascalia" 
+                            width="1000" 
+                            height="1400"
+                            data-full="Foto_Galleria/IMG-20250206-WA0021.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Immagine senza didascalia</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0024-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20250206-WA0024-300x352.webp"
+                            alt="Decorazioni personalizzati" 
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20250206-WA0024.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Decorazioni personalizzati</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0025-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20250206-WA0025-300x352.webp"
+                            alt="Decorazioni personalizzati" 
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20250206-WA0025.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Decorazioni personalizzati</figcaption>
+                </figure>
+                <figure class="gallery-item sartoria">
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0020-300x352.webp" type="image/webp">
+                        <img class="gallery-img" 
+                            src="Foto_Galleria/IMG-20250206-WA0020-300x352.webp" 
+                            alt="Abito da cerimonia"
+                            width="300" 
+                            height="352"
+                            data-full="Foto_Galleria/IMG-20250206-WA0020.webp" 
+                            loading="lazy">
+                    </picture>
+                    <figcaption>Abito da cerimonia</figcaption>
+                </figure>
+            </div>
+
+            <!-- Lightbox -->
+            <div id="lightbox" class="lightbox">
+                <span class="close" onclick="closeLightbox()">&times;</span>
+                <img id="lightbox-image" src="" alt="Immagine ingrandita">
+                <p id="lightbox-caption"></p>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div> <!-- Qui verrà caricato il footer -->
+
+    <div id="cookie-container"></div> <!-- Qui verrà caricato il banner cookie -->
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>

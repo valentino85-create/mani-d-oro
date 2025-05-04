@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mani d'oro sartoria e merceria di Eleonora Brunori</title>
+   
+    <!-- Preconnect ai servizi esterni (Google Fonts e Fontello) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload fonts for faster loading -->
+    <link rel="preload" href="fonts/Allura-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ArbutusSlab-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fontello/font/fontello.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Google Fonts + Fontello -->
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Arbutus+Slab&display=swap" rel="stylesheet">
+
+    <!-- Caricamento non bloccante CSS principale -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    
+    <!-- Fontello icone -->
+    <link rel="stylesheet" href="fontello/css/fontello.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="fontello/css/fontello.css"></noscript>
+</head>
+
+<body>
+
+    <!-- Codice Header -->
+    <header class="header">
+        <!-- Logo nella sua sezione separata -->
+        <div class="logo">
+            <a href="index.html">
+                <picture>
+                    <!-- <source srcset="/Logo_negozio/Logo-negozio-Ele.avif" type="image/avif"> -->
+                    <source srcset="Logo_negozio/Logo-negozio-Ele.webp" type="image/webp">
+                    <img src="Logo_negozio/Logo-negozio-Ele.png" alt="Logo del sito" width="120" height="120" fetchpriority="high">
+                </picture>
+            </a>
+        </div>
+
+        <!-- Menu hamburger (in una sezione separata)-->
+        <nav class="nav-container">
+            <input class="menu-btn" id="menu-btn" type="checkbox">
+            <label for="menu-btn" class="menu-icon">
+                <span class="nav-icon"></span>
+            </label>
+
+            <!-- Menu di navigazione -->
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Chi sono</a></li>
+                <li><a href="services.html">Servizi</a></li>
+                <li><a href="gallery.html">Galleria</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="benvenuto">
+            <h1>Benvenuti in Mani d'oro</h1>
+            <h2 class="centered-h2">Passione per il cucito, qualità per ogni creazione</h2>
+
+            <p><strong>Da <em>Mani d'oro</em> troverai un'ampia selezione di articoli di merceria, tessuti raffinati,
+                    filati, bottoni, aghi e tutto l’occorrente per il cucito.</strong></p>
+
+            <div class="benvenuto-img-container">
+                <picture>
+                    <source srcset="Foto_Galleria/IMG-20250405-WA0000.webp" type="image/webp">
+                    <img src="Foto_Galleria/IMG-20250405-WA0000.jpg" alt="Interno negozio" width="600" height="400" class="clickable-img">
+                </picture>
+            </div>
+
+            <p><strong>Offro anche servizi di sartoria su misura, riparazioni e personalizzazioni.<br>Ogni dettaglio
+                    è curato con attenzione e passione artigianale.</strong></p>
+
+            <div class="benvenuto-img-container">
+                <figure>
+                    <picture>
+                        <source srcset="Foto_Galleria/IMG-20250206-WA0035.webp" type="image/webp">
+                        <img src="Foto_Galleria/IMG-20250206-WA0035.jpg" alt="Foto artistica 'La precisione nelle mani'" width="600" height="400" class="clickable-img">
+                    </picture>
+                    <figcaption>Foto di Arianna Mariani<br>"La precisione nelle mani"</figcaption>
+                </figure>
+                
+            </div>
+
+            <!-- Popup per visualizzare immagine ingrandita -->
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImg">
+            </div>
+        </section>
+    </main>
+
+     <!-- Qui verrà caricato il footer -->
+    <div id="footer-container"></div>
+
+     <!-- Qui verrà caricato il banner cookie -->
+    <div id="cookie-container"></div>
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contatti</title>
+
+    <!-- Preconnect ai servizi esterni (Google Fonts e Fontello) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload fonts for faster loading -->
+    <link rel="preload" href="fonts/Allura-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ArbutusSlab-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fontello/font/fontello.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Caricamento non bloccante CSS principale -->
+    <link rel="stylesheet" href="style.css">
+
+     <!-- Fontello icone -->
+    <link rel="stylesheet" href="fontello/css/fontello.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="fontello/css/fontello.css"></noscript>
+</head>
+
+<body>
+
+    <!-- Codice Header -->
+    <header class="header">
+        <!-- Logo nella sua sezione separata -->
+        <div class="logo">
+            <a href="index.html">
+                <picture>
+                    <source srcset="Logo_negozio/Logo-negozio-Ele.webp" type="image/webp">
+                    <img src="Logo_negozio/Logo-negozio-Ele.png" alt="Logo del sito" width="120" height="120"
+                        fetchpriority="high" loading="eager">
+                </picture>
+            </a>
+        </div>
+
+        <!-- Menu hamburger (in una sezione separata)-->
+        <nav class="nav-container">
+            <input class="menu-btn" id="menu-btn" type="checkbox">
+            <label for="menu-btn" class="menu-icon"><span class="nav-icon"></span></label>
+
+            <!-- Menu di navigazione -->
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Chi sono</a></li>
+                <li><a href="services.html">Servizi</a></li>
+                <li><a href="gallery.html">Galleria</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="left-column">
+                <!-- Sezione contatti -->
+                <section class="contatti">
+                    <h1>Contatti<br><br><strong>Come contattarmi</strong></h1>
+
+                    <p>&#x260E; <a href="tel:+390731721875">+39 0731 721875</a></p>
+                    <p>&#x1F4F1; <a href="tel:+393914230285">+39 3914230285</a></p>
+                    <p>&#x2709; <a href="mailto:manidoro.info@gmail.com">manidoro.info@gmail.com</a></p>
+                </section>
+
+                <!-- Sezione icone social -->
+                <section id="contact">
+                    <h1>Seguimi sui social</h1>
+                    <div class="contact-social-icons">
+                        <a href="https://facebook.com" target="_blank" class="contact-social-icon"
+                            aria-label="Facebook">
+                            <i class="icon-facebook-official"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="contact-social-icon"
+                            aria-label="Facebook">
+                            <i class="icon-instagram"></i>
+                        </a>
+                        <a href="https://whatsapp.com" target="_blank" class="contact-social-icon"
+                            aria-label="Facebook">
+                            <i class="icon-whatsapp"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Geolocalizzazione negozio -->
+                <h1>Come raggiungermi</h1>
+                <address>
+                    Via M. Ferranti 6,<br>60034 Cupramontana (AN), Italia
+                </address>
+
+                <!-- Mappa -->
+                <div class="map-container" id="map-container">
+                    <!-- Placeholder immagine oppure spazio vuoto -->
+                    <p style="text-align:center;">Sto caricando la mappa...</p>
+                </div>
+
+                <!-- Orari di apertura -->
+                <section class="orari">
+                    <h2>Orari di apertura</h2>
+                    <ul>
+                        <li>Lunedì: 9:00 - 12:30</li>
+                        <li>Martedì: 9:00 - 12:30 / 16:00 - 19:30</li>
+                        <li>Mercoledì: 16:00 - 19:30</li>
+                        <li>Giovedì: 9:00 - 12:30</li>
+                        <li>Venerdì: 16:00 - 19:30</li>
+                        <li>Sabato: 9:00 - 12:30</li>
+                        <li>Domenica: CHIUSO</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="right-column">
+                <h1>Compila il modulo per contattarmi</h1>
+                <!-- Sezione modulo -->
+                <div class="contact-form">
+                    <!-- Creazione modulo -->
+                    <form action="https://formsubmit.co/manidoro.info@gmail.com" method="POST">
+                         <!-- Campi invisibili per configurazione -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://valentino85-create.github.io/mani-d-oro/grazie.html">
+                        <input type="hidden" name="_template" value="box">
+                        
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome" required
+                            autocomplete="given-name">
+
+                        <label for="surname">Cognome:</label>
+                        <input type="text" id="surname" name="surname" placeholder="Inserisci il tuo cognome" required
+                            autocomplete="family-name">
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required
+                            autocomplete="email">
+
+                        <label for="message">Messaggio:</label>
+                        <textarea id="message" name="message" placeholder="Scrivi il tuo messaggio" rows="5" required
+                            autocomplete="off"></textarea>
+
+                        <div class="button-container">
+                            <button type="submit">Invia</button>
+                            <button type="reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div> <!-- Qui verrà caricato il footer -->
+
+    <div id="cookie-container"></div> <!-- Qui verrà caricato il banner cookie -->
+
+    <script src="script.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const mapContainer = document.getElementById("map-container");
+            let mapLoaded = false;
+
+            function loadMap() {
+                if (mapLoaded) return;
+                mapContainer.innerHTML = `
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2896.7073130972667!2d13.113283975315161!3d43.44582846581967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132dbc5a96c7c709%3A0x2eb1c307a4c704f3!2sMani%20d&#39;oro%20Sartoria%20e%20Merceria%20di%20Brunori%20Eleonora!5e0!3m2!1sit!2sit!4v1726843101967!5m2!1sit!2sit"
+                        width="400"
+                        height="250"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    `;
+                mapLoaded = true;
+            }
+
+            // Usa IntersectionObserver se disponibile
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            loadMap();
+                            observer.disconnect();
+                        }
+                    })
+                }, { rootMargin: "200px" });
+
+                observer.observe(mapContainer);
+            } else {
+                // Fallback se IntersectionObserver non esiste
+                window.addEventListener("scroll", function () {
+                    if (window.scrollY + window.innerHeight > mapContainer.offsetTop - 200) {
+                        loadMap();
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

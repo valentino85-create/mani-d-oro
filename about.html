@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chi sono</title>
+
+    <!-- Preconnect ai servizi esterni (Google Fonts e Fontello) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload fonts for faster loading -->
+    <link rel="preload" href="fonts/Allura-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ArbutusSlab-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fontello/font/fontello.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Google Fonts + Fontello -->
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Arbutus+Slab&display=swap" rel="stylesheet">
+
+    <!-- Caricamento non bloccante CSS principale -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+    <!-- Fontello icone -->
+    <link rel="stylesheet" href="fontello/css/fontello.css" media="print" onload="this.media='all'">
+    <noscript><ink rel="stylesheet" href="fontello/css/fontello.css"></noscript>
+</head>
+
+<body>
+
+    <!-- Codice Header -->
+    <header class="header">
+        <!-- Logo nella sua sezione separata -->
+        <div class="logo">
+            <a href="index.html">
+                <picture>
+                    <source srcset="Logo_negozio/Logo-negozio-Ele.webp" type="image/webp">
+                    <img src="Logo_negozio/Logo-negozio-Ele.png" alt="Logo del sito" width="120" height="120" fetchpriority="high">
+                </picture>
+            </a>
+        </div>
+
+        <!-- Menu hamburger (in una sezione separata)-->
+        <nav class="nav-container">
+            <input class="menu-btn" id="menu-btn" type="checkbox">
+            <label for="menu-btn" class="menu-icon">
+                <span class="nav-icon"></span>
+            </label>
+
+            <!-- Menu di navigazione -->
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Chi sono</a></li>
+                <li><a href="services.html">Servizi</a></li>
+                <li><a href="gallery.html">Galleria</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sezione Chi siamo -->
+        <section class="chi-siamo">
+            <div class="chi-siamo-top">
+                <img src="Foto_Galleria/IMG-20250206-WA0003.webp" class="chi-siamo-img" alt="Eleonora Brunori" width="130" height="130" loading="lazy">
+                <div class="chi-siamo-titoli">
+                    <h1>Chi sono</h1>
+                </div>
+            </div>
+
+            <p>Benvenuti nel mio piccolo mondo di stoffe, colori e creatività!<br><br> Sono Eleonora, sarta artigiana
+                per passione e
+                custode di una merceria dove ogni dettaglio racconta una storia.<br> Nel mio atelier, la tradizione
+                satoriale si
+                unisce alla creatività contemporanea per dare vita a creazioni uniche, pensate per valorizzare la
+                bellezza di
+                ogni donna.<br><br> Il mio lavoro inizia nel 2011 con un sogno: il vostro!<br> Mi prendo cura di ogni
+                cliente fin dal
+                primo
+                pensiero del suo abito, accompagnandola in un percorso personalizzato dove ogni dettaglio viene studiato
+                con
+                passione e competenza.<br>Dalla scelta dei tessuti al taglio su misura, ogni fase della creazione è
+                dedicata a
+                esaltare la vostra figura e a farvi sentire meravigliosamente a vostro agio.<br><br> Qui troverete molto
+                più di una
+                semplice merceria: è uno spazio dove la qualità dei prodotti si intreccia con la cura del servizio, dove
+                ogni cliente viene accolta con un sorriso sincero e seguita con pazienza e dedizione.<br>Le
+                pareti
+                colorate fanno da cornice a un ambiente sereno e accogliente, pensato per farvi sentire a casa mentre
+                esplorate l'ampio assortimento di accessori e filati selezionati con cura per maglieria e ricamo, per
+                dare
+                vita a tutte le vostre creazioni.<br><br> La sostenibilità è al centro del mio lavoro: credo che
+                ogni capo
+                meriti una seconda possibilità e che la vera eleganza nasca dalla cura dei dettagli e dal rispetto per
+                ciò
+                che indossiamo.<br>Il mio servizio di riparazioni sartoriali non è solo un modo per prolungare la vita
+                dei
+                vostri vestiti, ma un gesto d'amore verso l'ambiente e il vero artigianato italiano.<br><br> La passione
+                per il
+                cucito è contagiosa ed è per questo che organizzo corsi dove potrete imparare l'arte della sartoria in
+                un'atmosfera amichevole e stimolante. Che siate principianti o esperte, troverete il percorso giusto per
+                esprimere la vostra creatività e realizzare i vostri progetti.<br><br> Vi aspetto per trasformare
+                insieme i vostri
+                sogni in creazioni uniche, per dare nuova vita ai vostri capi preferiti o semplicemente per condividere
+                la
+                passione per il mondo del cucito in un ambiente dove professionalità e cordialità vanno di pari passo.
+            </p>
+        </section>
+
+    </main>
+
+    <div id="footer-container"></div> <!-- Qui verrà caricato il footer -->
+
+    <div id="cookie-container"></div> <!-- Qui verrà caricato il banner cookie -->
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>
